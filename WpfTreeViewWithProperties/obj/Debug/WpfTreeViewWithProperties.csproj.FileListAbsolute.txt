@@ -1,0 +1,16 @@
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\bin\Debug\WpfTreeViewWithProperties.exe.config
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\bin\Debug\WpfTreeViewWithProperties.exe
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\bin\Debug\WpfTreeViewWithProperties.pdb
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties.csproj.AssemblyReference.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties.csproj.SuggestedBindingRedirects.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\View\MainWindow.g.cs
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\App.g.cs
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties_MarkupCompile.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties_MarkupCompile.lref
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\View\MainWindow.baml
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties.g.resources
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithPropertys.Properties.Resources.resources
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties.csproj.GenerateResource.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties.csproj.CoreCompileInputs.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties.exe
+C:\workspace\WpfPersonsTask\WpfTreeViewWithProperties\obj\Debug\WpfTreeViewWithProperties.pdb
