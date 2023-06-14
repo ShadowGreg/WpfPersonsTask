@@ -138,7 +138,7 @@ namespace WpfTreeViewWithProperties.Core {
             List<ElectricFeeder> electricFeeders = new List<ElectricFeeder>()
             {
                 new ElectricFeeder(
-                    "1",
+                    "ф1",
                     new List<IHierarchical>()
                     {
                         electricConsumers[0],
@@ -147,7 +147,7 @@ namespace WpfTreeViewWithProperties.Core {
                     }
                     ),
                 new ElectricFeeder(
-                    "2",
+                    "ф2",
                     new List<IHierarchical>()
                     {
                         electricConsumers[1],
@@ -156,7 +156,7 @@ namespace WpfTreeViewWithProperties.Core {
                     }
                 ),
                 new ElectricFeeder(
-                    "3",
+                    "ф3",
                     new List<IHierarchical>()
                     {
                         electricConsumers[2],

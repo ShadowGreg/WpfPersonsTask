@@ -24,9 +24,14 @@
                         <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
                             <Label Content="{Binding Id}" />
                             <HierarchicalDataTemplate.ItemTemplate>
-                                <DataTemplate>
+                                <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
                                     <Label Content="{Binding Id}" />
-                                </DataTemplate>
+                                    <HierarchicalDataTemplate.ItemTemplate>
+                                        <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                                            <Label Content="{Binding SomeName}" />
+                                        </HierarchicalDataTemplate>
+                                    </HierarchicalDataTemplate.ItemTemplate>
+                                </HierarchicalDataTemplate>
                             </HierarchicalDataTemplate.ItemTemplate>
                         </HierarchicalDataTemplate>
                     </HierarchicalDataTemplate.ItemTemplate>
