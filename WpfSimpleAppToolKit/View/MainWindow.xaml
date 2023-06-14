@@ -1,0 +1,46 @@
+﻿<Window
+    Height="350"
+    Title="MainWindow"
+    Width="525"
+    mc:Ignorable="d"
+    x:Class="WpfSimpleAppToolKit.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dg="clr-namespace:System;assembly=CommunityToolkit.Mvvm"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:WpfSimpleAppToolKit.Model"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.DataContext>
+        <model:ApplicationViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <!--  DataContext="{StaticResource DataSourceS}"  -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.8*" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox
+            Grid.Column="0"
+            ItemsSource="{Binding Phones}"
+            SelectedItem="{Binding SelectedPhoneB, UpdateSourceTrigger=PropertyChanged}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock FontSize="18" Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Path=Phone}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel DataContext="{Binding SelectedPhoneB}" Grid.Column="1">
+            <TextBlock Text="Выбранный элемент" />
+            <TextBlock Text="Имя" />
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Телефон" />
+            <TextBox Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+    </Grid>
+</Window>

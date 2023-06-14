@@ -1,0 +1,17 @@
+C:\workspace\WpfPersonsTask\WpfSimpleApp\bin\Debug\WpfSimpleApp.exe.config
+C:\workspace\WpfPersonsTask\WpfSimpleApp\bin\Debug\WpfSimpleApp.exe
+C:\workspace\WpfPersonsTask\WpfSimpleApp\bin\Debug\WpfSimpleApp.pdb
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp.csproj.AssemblyReference.cache
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp.csproj.SuggestedBindingRedirects.cache
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\View\MainWindow.g.cs
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\App.g.cs
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp_MarkupCompile.cache
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\View\MainWindow.baml
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp.g.resources
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp.Properties.Resources.resources
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp.csproj.GenerateResource.cache
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp.csproj.CoreCompileInputs.cache
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp.exe
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp.pdb
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\WpfSimpleApp_MarkupCompile.lref
+C:\workspace\WpfPersonsTask\WpfSimpleApp\obj\Debug\GeneratedInternalTypeHelper.g.cs

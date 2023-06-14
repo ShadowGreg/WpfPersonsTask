@@ -1,0 +1,40 @@
+﻿<UserControl
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d"
+    x:Class="WpfTreeViewTask.View.CompanyDetailView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Style="{DynamicResource TextBlockStyle}" Text="XYZ Company" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock
+                    FontSize="12"
+                    Style="{DynamicResource TextBlockStyle}"
+                    Text="Department List" />
+            </Grid>
+            <Grid Grid.Row="1" MaxHeight="250">
+                <TreeView
+                    Background="#FFF"
+                    BorderThickness="0"
+                    ItemContainerStyle="{DynamicResource TreeViewItemStyle}"
+                    ItemTemplate="{DynamicResource DepartmentTemplate}"
+                    ItemsSource="{Binding DepartmentCollection}"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

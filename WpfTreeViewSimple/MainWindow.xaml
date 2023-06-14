@@ -1,0 +1,36 @@
+﻿<Window
+    Height="350"
+    Title="MainWindow"
+    Width="525"
+    d:DataContext="{d:DesignInstance Type=model:MainWindowViewModel}"
+    mc:Ignorable="d"
+    x:Class="WpfTreeViewSimple.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:WpfTreeViewSimple.Model"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <TreeView
+            HorizontalAlignment="Stretch"
+            ItemsSource="{Binding CityList}"
+            Margin="10"
+            VerticalAlignment="Stretch">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding StreetList}">
+                    <Label Content="{Binding CityName}" />
+                    <HierarchicalDataTemplate.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Houses}">
+                            <Label Content="{Binding StreetName}" />
+                            <HierarchicalDataTemplate.ItemTemplate>
+                                <DataTemplate>
+                                    <Label Content="{Binding HouseNumber}" />
+                                </DataTemplate>
+                            </HierarchicalDataTemplate.ItemTemplate>
+                        </HierarchicalDataTemplate>
+                    </HierarchicalDataTemplate.ItemTemplate>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</Window>

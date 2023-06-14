@@ -1,0 +1,16 @@
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\bin\Debug\WpfTreeViewSimple.exe.config
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\bin\Debug\WpfTreeViewSimple.exe
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\bin\Debug\WpfTreeViewSimple.pdb
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple.csproj.AssemblyReference.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple.csproj.SuggestedBindingRedirects.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\MainWindow.g.cs
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\App.g.cs
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple_MarkupCompile.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple_MarkupCompile.lref
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\MainWindow.baml
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple.g.resources
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple.Properties.Resources.resources
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple.csproj.GenerateResource.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple.csproj.CoreCompileInputs.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple.exe
+C:\workspace\WpfPersonsTask\WpfTreeViewSimple\obj\Debug\WpfTreeViewSimple.pdb
