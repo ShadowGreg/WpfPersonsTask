@@ -28,7 +28,10 @@
                                     <Label Content="{Binding Id}" />
                                     <HierarchicalDataTemplate.ItemTemplate>
                                         <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                                            <Label Content="{Binding SomeName}" />
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="{Binding SomeName}" />
+                                                <Label Content="{Binding InSystemName}" />
+                                            </StackPanel>
                                         </HierarchicalDataTemplate>
                                     </HierarchicalDataTemplate.ItemTemplate>
                                 </HierarchicalDataTemplate>
