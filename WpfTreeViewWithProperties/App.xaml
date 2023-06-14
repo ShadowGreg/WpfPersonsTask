@@ -1,0 +1,8 @@
+﻿<Application
+    StartupUri="/View/MainWindow.xaml"
+    x:Class="WpfTreeViewWithPropertys.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:local="clr-namespace:WpfTreeViewWithPropertys"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources />
+</Application>

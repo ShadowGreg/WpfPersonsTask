@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSimpleAppToolKit", "WpfS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewSimple", "WpfTreeViewSimple\WpfTreeViewSimple.csproj", "{CDDC98CD-78AA-4163-B10F-03E91DCA367D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewWithPropertys", "WpfTreeViewWithPropertys\WpfTreeViewWithPropertys.csproj", "{C6A94F2E-B81B-47EF-8315-A5205C5CDC0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewWithProperties", "WpfTreeViewWithProperties\WpfTreeViewWithProperties.csproj", "{C6A94F2E-B81B-47EF-8315-A5205C5CDC0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
