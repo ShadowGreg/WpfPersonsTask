@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewSimple", "WpfTre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewWithProperties", "WpfTreeViewWithProperties\WpfTreeViewWithProperties.csproj", "{C6A94F2E-B81B-47EF-8315-A5205C5CDC0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewWithPropertysTests", "WpfTreeViewWithPropertysTests\WpfTreeViewWithPropertysTests.csproj", "{88A037BB-7AB9-4E24-A41A-7737844B1772}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{C6A94F2E-B81B-47EF-8315-A5205C5CDC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6A94F2E-B81B-47EF-8315-A5205C5CDC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6A94F2E-B81B-47EF-8315-A5205C5CDC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A037BB-7AB9-4E24-A41A-7737844B1772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A037BB-7AB9-4E24-A41A-7737844B1772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A037BB-7AB9-4E24-A41A-7737844B1772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A037BB-7AB9-4E24-A41A-7737844B1772}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
