@@ -13,8 +13,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <Label Content="Selected Item Properties:" FontWeight="Bold" />
-            <Label Content="{Binding SelectedItem.Id}" />
+            <StackPanel Height="100" Margin="10">
+                <Label Content="Selected Item Properties:" FontWeight="Bold" />
+                <Label Content="{Binding SelectedItem.Id}" />
+                <Label Content="{Binding SelectedItem.SomeName}" />
+                <Label Content="{Binding SelectedItem.InSystemName}" />
+            </StackPanel>
 
             <TreeView
                 HorizontalAlignment="Stretch"
