@@ -22,9 +22,6 @@
                 Margin="10"
                 SelectedItemChanged="TreeView_SelectedItemChanged"
                 VerticalAlignment="Stretch">
-                <TreeView.ItemContainerStyle>
-                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
-                </TreeView.ItemContainerStyle>
                 <TreeView.ItemTemplate>
                     <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
                         <Label Content="{Binding Id}" />

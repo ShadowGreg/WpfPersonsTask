@@ -129,7 +129,7 @@ namespace WpfTreeViewWithProperties.Core {
             set
             {
                 _selectedItem = value;
-                OnPropertyChanged("SelectedItemChanged");
+                OnPropertyChanged(nameof(SelectedItem));
             }
         }
 
