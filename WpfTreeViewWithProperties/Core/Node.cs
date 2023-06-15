@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Controls;
 
 namespace WpfTreeViewWithProperties.Core {
     public interface IHierarchical {
@@ -16,6 +17,7 @@ namespace WpfTreeViewWithProperties.Core {
                 PropertyChanged(this, new PropertyChangedEventArgs(PropertyChangedEvent));
             }
         }
+        
     }
 
     public abstract class Base: ViewModelBase {
@@ -116,7 +118,20 @@ namespace WpfTreeViewWithProperties.Core {
             }
         }
 
+        private static IHierarchical _selectedItem;
+        public IHierarchical SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                OnPropertyChanged("SelectedItemChanged");
+            }
+        }
+
+
         public MainWindowViewModel() {
+            _selectedItem = null;
             List<ElectricConsumer> electricConsumers = new List<ElectricConsumer>()
             {
                 new ElectricConsumer(Base.SystemName.ElectricConsumer,"Потребитель 1"),

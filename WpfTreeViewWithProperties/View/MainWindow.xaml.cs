@@ -1,4 +1,5 @@
-﻿using WpfTreeViewWithProperties.Core;
+﻿using System.Windows;
+using WpfTreeViewWithProperties.Core;
 
 namespace WpfTreeViewWithPropertys.View {
     /// <summary>
@@ -8,6 +9,11 @@ namespace WpfTreeViewWithPropertys.View {
         public MainWindow() {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
+        }
+        private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            MainWindowViewModel viewModel = (MainWindowViewModel)DataContext;
+            viewModel.SelectedItem = (IHierarchical)e.NewValue;
         }
     }
 }

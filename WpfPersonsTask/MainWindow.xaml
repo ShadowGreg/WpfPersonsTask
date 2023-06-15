@@ -1,0 +1,24 @@
+﻿<Window
+    Height="350"
+    Title="MainWindow"
+    Width="800"
+    mc:Ignorable="d"
+    x:Class="WpfPersonsTask.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.Resources>
+        <Style TargetType="ColumnDefinition">
+            <Setter Property="Width" Value="400" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Frame Grid.Column="0" Source="PersonWindow.xaml" />
+        <Frame Grid.Column="1" Source="NewPage.xaml" />
+    </Grid>
+</Window>

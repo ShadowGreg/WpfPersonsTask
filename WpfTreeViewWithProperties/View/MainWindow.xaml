@@ -12,34 +12,39 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
-        <TreeView
-            HorizontalAlignment="Stretch"
-            ItemsSource="{Binding ElectricPanelList}"
-            Margin="10"
-            VerticalAlignment="Stretch">
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                    <Label Content="{Binding Id}" />
-                    <HierarchicalDataTemplate.ItemTemplate>
-                        <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                            <Label Content="{Binding Id}" />
-                            <HierarchicalDataTemplate.ItemTemplate>
-                                <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                                    <Label Content="{Binding Id}" />
-                                    <HierarchicalDataTemplate.ItemTemplate>
-                                        <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="{Binding SomeName}" />
-                                                <Label Content="{Binding InSystemName}" />
-                                            </StackPanel>
-                                        </HierarchicalDataTemplate>
-                                    </HierarchicalDataTemplate.ItemTemplate>
-                                </HierarchicalDataTemplate>
-                            </HierarchicalDataTemplate.ItemTemplate>
-                        </HierarchicalDataTemplate>
-                    </HierarchicalDataTemplate.ItemTemplate>
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-        </TreeView>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Selected Item Properties:" FontWeight="Bold" />
+            <Label Content="{Binding SelectedItem.Id, UpdateSourceTrigger=PropertyChanged}" />
+            <TreeView
+                HorizontalAlignment="Stretch"
+                ItemsSource="{Binding ElectricPanelList}"
+                Margin="10"
+                SelectedItemChanged="TreeView_SelectedItemChanged"
+                VerticalAlignment="Stretch">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                        <Label Content="{Binding Id}" />
+                        <HierarchicalDataTemplate.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                                <Label Content="{Binding Id}" />
+                                <HierarchicalDataTemplate.ItemTemplate>
+                                    <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                                        <Label Content="{Binding Id}" />
+                                        <HierarchicalDataTemplate.ItemTemplate>
+                                            <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="{Binding SomeName}" />
+                                                    <Label Content="{Binding InSystemName}" />
+                                                </StackPanel>
+                                            </HierarchicalDataTemplate>
+                                        </HierarchicalDataTemplate.ItemTemplate>
+                                    </HierarchicalDataTemplate>
+                                </HierarchicalDataTemplate.ItemTemplate>
+                            </HierarchicalDataTemplate>
+                        </HierarchicalDataTemplate.ItemTemplate>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </StackPanel>
     </Grid>
 </Window>

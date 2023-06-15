@@ -1,0 +1,46 @@
+﻿<Page
+    Height="350"
+    Title="PersonWindow"
+    Width="800"
+    mc:Ignorable="d"
+    x:Class="WpfPersonsTask.ElementsViewModel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition MaxHeight="100" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5" Text="Фильтр:" />
+            <TextBox
+                DataContext="{StaticResource SharedElementsViewModel}"
+                Height="20"
+                Margin="5"
+                Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
+                Width="200" />
+        </StackPanel>
+        <DataGrid
+            AutoGenerateColumns="False"
+            DataContext="{StaticResource SharedElementsViewModel}"
+            Grid.Row="1"
+            ItemsSource="{Binding Items}"
+            Margin="5"
+            SelectedValue="{Binding SelectedItem}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия" />
+                <DataGridTextColumn Binding="{Binding Name}" Header="Имя" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="2">
+            <Label Content="Переключение работает и меняет содержимое вызываемого объекта:" />
+            <Label
+                Content="{Binding SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"
+                DataContext="{StaticResource SharedElementsViewModel}"
+                d:DataContext="{d:DesignInstance}" />
+        </StackPanel>
+    </Grid>
+</Page>
