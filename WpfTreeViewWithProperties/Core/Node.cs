@@ -34,6 +34,10 @@ namespace WpfTreeViewWithProperties.Core {
             ElectricalCable,
             ElectricConsumer
         }
+
+        public override string ToString() {
+            return Id;
+        }
     }
 
     public class ElectricConsumer: Base, IHierarchical {
@@ -202,4 +206,5 @@ namespace WpfTreeViewWithProperties.Core {
 
         }
     }
+    
 }
