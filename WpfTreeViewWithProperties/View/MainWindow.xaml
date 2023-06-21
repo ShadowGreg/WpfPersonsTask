@@ -57,7 +57,23 @@
                     </TreeView.ItemTemplate>
                 </TreeView>
             </ScrollViewer>
-
         </StackPanel>
+
+        <DataGrid
+            AutoGenerateColumns="False"
+            Grid.Column="1"
+            ItemsSource="{Binding KeyValuePairs}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Key}" Header="Key" />
+                <DataGridTemplateColumn Header="Value">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

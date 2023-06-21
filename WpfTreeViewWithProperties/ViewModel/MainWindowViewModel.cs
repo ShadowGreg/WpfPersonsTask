@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using WpfTreeViewWithProperties.Core;
 
 namespace WpfTreeViewWithPropertys.ViewModel {
@@ -11,7 +12,7 @@ namespace WpfTreeViewWithPropertys.ViewModel {
             set
             {
                 _electricPanelList = value;
-                OnPropertyChanged("CityList");
+                OnPropertyChanged(nameof(ElectricPanelList));
             }
         }
 
@@ -23,7 +24,19 @@ namespace WpfTreeViewWithPropertys.ViewModel {
             set
             {
                 _selectedItem = value;
+                LoadData();
                 OnPropertyChanged(nameof(SelectedItem));
+            }
+        }
+        
+        public ObservableCollection<KeyValue> KeyValuePairs { get; set; }
+        private void LoadData()
+        {
+            KeyValuePairs = new ObservableCollection<KeyValue>();
+            foreach (KeyValuePair<string, object> kvp in ((Base) _selectedItem).Fields)
+            {
+                KeyValuePairs.Add(new KeyValue { Key = kvp.Key, Value = kvp.Value });
+                OnPropertyChanged(nameof(KeyValuePairs));
             }
         }
 
@@ -98,5 +111,10 @@ namespace WpfTreeViewWithPropertys.ViewModel {
                 )
             };
         }
+    }
+
+    public class KeyValue {
+        public string Key { get; set; }
+        public object Value { get; set; }
     }
 }

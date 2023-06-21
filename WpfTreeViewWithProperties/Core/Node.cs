@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using WpfTreeViewWithPropertys.ViewModel;
 
 namespace WpfTreeViewWithProperties.Core {
@@ -22,6 +24,35 @@ namespace WpfTreeViewWithProperties.Core {
             ElectricalCable,
             ElectricConsumer
         }
+        
+        public Dictionary<string, object> Fields
+        {
+            get=>GetValues(this);
+            set=>SetValues(value);
+        }
+
+        private void SetValues(Dictionary<string, object> values) {
+            foreach (KeyValuePair<string, object> kvp in values) {
+                PropertyInfo prop = GetType().GetProperty(kvp.Key);
+                if (prop != null && prop.CanWrite) {
+                    prop.SetValue(this, kvp.Value);
+                }
+            }
+        }
+
+        private static Dictionary<string, object> GetValues(object obj)
+        {
+            Dictionary<string, object> values = new Dictionary<string, object>();
+            Type type = obj.GetType();
+            PropertyInfo[] fields = type.GetProperties();
+            foreach (PropertyInfo field in fields)
+            {
+                if (field.Name == "Fields") break;
+                
+                values[field.Name] = field.GetValue(obj);
+            }
+            return values;
+        }
     }
 
     public class ElectricConsumer: Base, IHierarchical {
@@ -41,7 +72,7 @@ namespace WpfTreeViewWithProperties.Core {
             protected set
             {
                 _someName = value;
-                OnPropertyChanged("ElectricConsumer_SomeName");
+                OnPropertyChanged("SomeName");
             }
         }
 
