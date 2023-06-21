@@ -13,6 +13,11 @@
     xmlns:viewModel="clr-namespace:WpfTreeViewWithPropertys.ViewModel"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
         <StackPanel Orientation="Vertical">
             <StackPanel Height="100" Margin="10">
                 <Label Content="Selected Item Properties:" FontWeight="Bold" />
@@ -20,37 +25,39 @@
                 <Label Content="{Binding SelectedItem.SomeName}" />
                 <Label Content="{Binding SelectedItem.InSystemName}" />
             </StackPanel>
+            <ScrollViewer Height="200">
+                <TreeView
+                    HorizontalAlignment="Stretch"
+                    ItemsSource="{Binding ElectricPanelList}"
+                    Margin="10"
+                    SelectedItemChanged="TreeView_SelectedItemChanged"
+                    VerticalAlignment="Stretch">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                            <Label Content="{Binding Id}" />
+                            <HierarchicalDataTemplate.ItemTemplate>
+                                <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                                    <Label Content="{Binding Id}" />
+                                    <HierarchicalDataTemplate.ItemTemplate>
+                                        <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                                            <Label Content="{Binding Id}" />
+                                            <HierarchicalDataTemplate.ItemTemplate>
+                                                <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Label Content="{Binding SomeName}" />
+                                                        <Label Content="{Binding InSystemName}" />
+                                                    </StackPanel>
+                                                </HierarchicalDataTemplate>
+                                            </HierarchicalDataTemplate.ItemTemplate>
+                                        </HierarchicalDataTemplate>
+                                    </HierarchicalDataTemplate.ItemTemplate>
+                                </HierarchicalDataTemplate>
+                            </HierarchicalDataTemplate.ItemTemplate>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </ScrollViewer>
 
-            <TreeView
-                HorizontalAlignment="Stretch"
-                ItemsSource="{Binding ElectricPanelList}"
-                Margin="10"
-                SelectedItemChanged="TreeView_SelectedItemChanged"
-                VerticalAlignment="Stretch">
-                <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                        <Label Content="{Binding Id}" />
-                        <HierarchicalDataTemplate.ItemTemplate>
-                            <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                                <Label Content="{Binding Id}" />
-                                <HierarchicalDataTemplate.ItemTemplate>
-                                    <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                                        <Label Content="{Binding Id}" />
-                                        <HierarchicalDataTemplate.ItemTemplate>
-                                            <HierarchicalDataTemplate ItemsSource="{Binding Childrens}">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <Label Content="{Binding SomeName}" />
-                                                    <Label Content="{Binding InSystemName}" />
-                                                </StackPanel>
-                                            </HierarchicalDataTemplate>
-                                        </HierarchicalDataTemplate.ItemTemplate>
-                                    </HierarchicalDataTemplate>
-                                </HierarchicalDataTemplate.ItemTemplate>
-                            </HierarchicalDataTemplate>
-                        </HierarchicalDataTemplate.ItemTemplate>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
         </StackPanel>
     </Grid>
 </Window>
