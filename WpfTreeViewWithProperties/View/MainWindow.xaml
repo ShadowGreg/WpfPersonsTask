@@ -2,7 +2,7 @@
     Height="350"
     Title="MainWindow"
     Width="525"
-    d:DataContext="{d:DesignInstance Type=core:MainWindowViewModel}"
+    d:DataContext="{d:DesignInstance Type=viewModel:MainWindowViewModel}"
     mc:Ignorable="d"
     x:Class="WpfTreeViewWithPropertys.View.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -10,6 +10,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WpfTreeViewWithProperties"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:WpfTreeViewWithPropertys.ViewModel"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <StackPanel Orientation="Vertical">

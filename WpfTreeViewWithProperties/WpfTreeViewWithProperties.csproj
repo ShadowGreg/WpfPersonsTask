@@ -54,8 +54,11 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="Core\Foo.cs" />
+        <Compile Include="Core\BaseFoo.cs" />
+        <Compile Include="Core\FooConsumer.cs" />
         <Compile Include="Core\Node.cs" />
+        <Compile Include="ViewModel\MainWindowViewModel.cs" />
+        <Compile Include="ViewModel\ViewModelBase.cs" />
         <Compile Include="View\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>

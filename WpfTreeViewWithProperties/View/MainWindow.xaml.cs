@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using WpfTreeViewWithProperties.Core;
+using WpfTreeViewWithPropertys.ViewModel;
 
 namespace WpfTreeViewWithPropertys.View {
     /// <summary>

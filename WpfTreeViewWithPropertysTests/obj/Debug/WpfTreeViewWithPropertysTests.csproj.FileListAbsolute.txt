@@ -1,0 +1,12 @@
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\bin\Debug\WpfTreeViewWithPropertysTests.dll
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\bin\Debug\WpfTreeViewWithPropertysTests.pdb
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\bin\Debug\nunit.framework.dll
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\bin\Debug\WpfTreeViewWithProperties.exe
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\bin\Debug\WpfTreeViewWithProperties.pdb
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\bin\Debug\WpfTreeViewWithProperties.exe.config
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\bin\Debug\nunit.framework.xml
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\obj\Debug\WpfTreeViewWithPropertysTests.csproj.AssemblyReference.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\obj\Debug\WpfTreeViewWithPropertysTests.csproj.CoreCompileInputs.cache
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\obj\Debug\WpfTreeViewWithPropertysTests.csproj.CopyComplete
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\obj\Debug\WpfTreeViewWithPropertysTests.dll
+C:\workspace\WpfPersonsTask\WpfTreeViewWithPropertysTests\obj\Debug\WpfTreeViewWithPropertysTests.pdb
