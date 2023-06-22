@@ -2,6 +2,13 @@
 
 namespace WpfTreeBD.Data {
     public class ElectricalSystemRepository {
+        public ElectricalSystemRepository() {
+            using (var context = new ElectricalSystemContext())
+            {
+                context.Database.CreateIfNotExists();
+            }
+        }
+
         public void AddOrUpdateElectricalSystem(ElectricalSystem electricalSystem)
         {
             using (var context = new ElectricalSystemContext())
