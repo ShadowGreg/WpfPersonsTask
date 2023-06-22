@@ -4,10 +4,10 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{C6A94F2E-B81B-47EF-8315-A5205C5CDC0C}</ProjectGuid>
+        <ProjectGuid>{32BFCB5C-25DD-4328-A71D-0247144BBAB1}</ProjectGuid>
         <OutputType>WinExe</OutputType>
-        <RootNamespace>WpfTreeViewWithPropertys</RootNamespace>
-        <AssemblyName>WpfTreeViewWithProperties</AssemblyName>
+        <RootNamespace>WpfTreeBD</RootNamespace>
+        <AssemblyName>WpfTreeBD</AssemblyName>
         <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,11 +54,11 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="Core\BaseFoo.cs" />
-        <Compile Include="Core\FooConsumer.cs" />
-        <Compile Include="Core\Node.cs" />
-        <Compile Include="ViewModel\MainWindowViewModel.cs" />
-        <Compile Include="ViewModel\ViewModelBase.cs" />
+        <Compile Include="Core\BaseNode.cs" />
+        <Compile Include="Core\ElectricalSystem.cs" />
+        <Compile Include="Core\ElectricPanel.cs" />
+        <Compile Include="Core\ServiceSystems\FixText.cs" />
+        <Compile Include="Core\ServiceSystems\IDGenerator.cs" />
         <Compile Include="View\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
@@ -82,13 +82,14 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Folder Include="Data" />
+      <Folder Include="ModelView" />
+    </ItemGroup>
+    <ItemGroup>
       <Page Include="View\MainWindow.xaml">
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>
       </Page>
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Core\ServiceSystems" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
