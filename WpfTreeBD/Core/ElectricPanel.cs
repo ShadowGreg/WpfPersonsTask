@@ -20,8 +20,24 @@ namespace WpfTreeBD.Core {
                      " cosFi=" + Coefficient;
         }
 
-        public ElectricPanel(double coefficient, string selfId, string selfName, List<string> childrenId,
-            double installedPower, double calculatedPower, double systemCurrent): base(selfId, selfName, childrenId,
+        public ElectricPanel(
+            double coefficient,
+            string selfName,
+            List<string> childrenId,
+            double installedPower,
+            double calculatedPower,
+            double systemCurrent): base(selfName, childrenId,
+            installedPower, calculatedPower, systemCurrent) {
+            Coefficient = coefficient;
+        }
+        public ElectricPanel(
+            double coefficient,
+            string selfId,
+            string selfName,
+            List<string> childrenId,
+            double installedPower,
+            double calculatedPower,
+            double systemCurrent): base(selfId, selfName, childrenId,
             installedPower, calculatedPower, systemCurrent) {
             Coefficient = coefficient;
         }

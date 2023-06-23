@@ -25,6 +25,17 @@ namespace WpfTreeBD.Core {
         }
 
         public ElectricalSystem(
+            string selfName,
+            List<string> childrenId,
+            double installedPower, 
+            double calculatedPower, 
+            double systemCurrent): base(selfName,childrenId) {
+            InstalledPower = installedPower;
+            CalculatedPower = calculatedPower;
+            SystemCurrent = systemCurrent;
+        }
+        
+        public ElectricalSystem(
             string selfId, 
             string selfName,
             List<string> childrenId,
