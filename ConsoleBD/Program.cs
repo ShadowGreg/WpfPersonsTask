@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 
 namespace ConsoleBD;
-
+// https://metanit.com/sharp/efcore/1.4.php
 public class User {
     public int Id { get; set; }
     public string Name { get; set; }
@@ -56,14 +55,14 @@ internal class Program {
             User alice = new User { Id = 2, Name = "Alice" };
             User bob = new User { Id = 3, Name = "Bob" };
             User roy = new User { Id = 4, Name = "Roy" };
-            UserMaster greg = new UserMaster { Name = "Greg", Users = new List<int> { 1, 2, 3, 4 } };
+            UserMaster greg = new UserMaster { Id = 1, Name = "Greg", Users = new List<int> { 1, 2, 3, 4 } };
 
             try {
-                context.Users.Add(tom);
-                context.Users.Add(alice);
-                context.Users.Add(bob);
-                context.Users.Add(roy);
-                context.UserMaster.Add(greg);
+                context.Users.Update(tom);
+                context.Users.Update(alice);
+                context.Users.Update(bob);
+                context.Users.Update(roy);
+                context.UserMaster.Update(greg);
                 context.SaveChanges();
                 Console.WriteLine("Объекты добавлены");
             }
