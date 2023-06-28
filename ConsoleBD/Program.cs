@@ -1,47 +1,88 @@
-﻿
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using NUnit.Framework;
 
-namespace ConsoleBD {
-    
-    public class User
-    {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public int Age { get; set; }
+namespace ConsoleBD;
+
+public class User {
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    public override string ToString() {
+        return $"{Id} {Name}";
     }
-    public class ApplicationContext : DbContext
-    {
-        public DbSet<User> Users {get;set; } = null!; 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
-        { 
-            optionsBuilder.UseSqlite($"Data Source={Directory.GetCurrentDirectory()}\\helloapp.db"); 
-        } 
+}
+
+public class UserMaster {
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public List<int> Users { get; set; }
+
+    public override string ToString() {
+        return Users.Aggregate(" ", (current, user) => current + " " + user);
     }
-    internal class Program {
-        public static void Main(string[] args) {
-            // Arrange
-            var options = new DbContextOptionsBuilder<ApplicationContext>()
-                .UseSqlite($"Data Source={Directory.GetCurrentDirectory()}\\test.db")
-                .Options;
-            // Act
-            using (var context = new ApplicationContext())
-            {
-                context.Database.EnsureCreated(); 
-                context.Users.Add(new User { Id = 1, Name = "John", Age = 25 }); 
-                context.SaveChanges(); 
+}
+
+public class ApplicationContext: DbContext {
+    public DbSet<User> Users => Set<User>();
+    public DbSet<UserMaster> UserMaster => Set<UserMaster>();
+    public ApplicationContext() => Database.EnsureCreated();
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+        optionsBuilder.UseSqlite("Data Source=hello.db");
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        modelBuilder.Entity<UserMaster>()
+            .Property(p => p.Users)
+            .HasConversion(
+                v => string.Join(",", v),
+                v => v.Split(',')
+                    .Select(int.Parse)
+                    .ToList());
+    }
+}
+
+internal class Program {
+    public static void Main(string[] args) {
+        using (ApplicationContext context = new ApplicationContext()) {
+            User tom = new User { Id = 1, Name = "Tom" };
+            User alice = new User { Id = 2, Name = "Alice" };
+            User bob = new User { Id = 3, Name = "Bob" };
+            User roy = new User { Id = 4, Name = "Roy" };
+            UserMaster greg = new UserMaster { Name = "Greg", Users = new List<int> { 1, 2, 3, 4 } };
+
+            try {
+                context.Users.Add(tom);
+                context.Users.Add(alice);
+                context.Users.Add(bob);
+                context.Users.Add(roy);
+                context.UserMaster.Add(greg);
+                context.SaveChanges();
+                Console.WriteLine("Объекты добавлены");
             }
-            // Assert
-            using (var context = new ApplicationContext())
-            {
-                var users = context.Users.ToList();
-                Assert.AreEqual(1, users.Count);
-                Assert.AreEqual("John", users[0].Name);
-                Assert.AreEqual(25, users[0].Age);
+            catch (Exception e) {
+                Console.WriteLine(e);
+            }
+
+
+            try {
+                List<User> users = context.Users.ToList();
+                List<UserMaster> UserMasters = context.UserMaster.ToList();
+                Console.WriteLine("Список объектов");
+                foreach (UserMaster userMaster in UserMasters) {
+                    Console.WriteLine(
+                        $"ID:{userMaster.Id} имя {userMaster.Name} ползьзователи {userMaster.ToString()}");
+                }
+
+                foreach (User user in users) {
+                    Console.WriteLine($"ID:{user.Id} имя {user.Name}");
+                }
+            }
+            catch (Exception e) {
+                Console.WriteLine(e);
             }
         }
     }
-
 }
