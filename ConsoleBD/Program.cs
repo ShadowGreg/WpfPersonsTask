@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace ConsoleBD;
 
@@ -27,7 +28,11 @@ public class UserMaster {
 public class ApplicationContext: DbContext {
     public DbSet<User> Users => Set<User>();
     public DbSet<UserMaster> UserMaster => Set<UserMaster>();
-    public ApplicationContext() => Database.EnsureCreated();
+
+    public ApplicationContext() {
+        Database.EnsureCreated();
+    }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
         optionsBuilder.UseSqlite("Data Source=hello.db");
@@ -79,6 +84,10 @@ internal class Program {
                 foreach (User user in users) {
                     Console.WriteLine($"ID:{user.Id} имя {user.Name}");
                 }
+
+                var temp = context.Users.Where(u => u.Id == 1);
+                var nexTemp = temp.First();
+                Console.WriteLine(nexTemp);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
